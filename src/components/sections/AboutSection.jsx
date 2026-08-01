@@ -88,7 +88,7 @@ function FeatureCard({ icon: Icon, title, desc, index }) {
 
 export default function AboutSection () {
     return (
-        <section className="py-3 section-muted" id="about">
+        <section className="section-muted" id="about">
             <div className="container-ds grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:items-start">
             
                 <div className="section-header-left">
@@ -97,7 +97,7 @@ export default function AboutSection () {
                     <p className="text-section-sub max-w-xl">{SECTION.sub}</p>
                  </div>
                 <div className="flex flex-col">                  
-                 <div className="section-header mb-2">
+                 <div className="section-header mb-6">
                     <h2 className="text-section-title max-2xl mb-2">Skills</h2>
                  </div>
                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -109,19 +109,19 @@ export default function AboutSection () {
                                
               </div>
               
-              <div className="container-ds">
+              <div className="container-ds pt-12">
                 <div className="section-header-left">
                         <h2 className="text-section-title max-w-2xl">Work Experience</h2>
                 </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
     {EXPERIENCE.map((item) => (
-        <div key={item.title} className="flex gap-4">
-            <div className="icon-box group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                <img src={item.icon} alt={`${item.title} logo`} className="h-full w-full" />
+        <div key={item.title} className="relative flex gap-4">
+            <div className="icon-box group-hover:scale-110 transition-transform duration-300 flex-shrink-0 before:absolute before:top-12 before:bottom-0 before:left-6 before:w-px before:bg-zinc-200 dark:before:bg-zinc-800">
+                <img src={item.icon} alt={`${item.title} logo`} className="border border-border bg-zinc-800 h-15 w-15" />
             </div>
             <div className="flex flex-col gap-1.5">
                 <h3 className="text-card-title">{item.title}</h3>
-                <h4 className="text-card-title">{item.role}</h4>
+                <h4 className="text-card-title text-base font-normal">{item.role}</h4>
                 <p className="text-body text-muted-foreground">{item.date}</p>
                 <p className="text-body text-muted-foreground">{item.responsibility}</p>
             </div>
