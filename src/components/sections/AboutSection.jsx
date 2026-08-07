@@ -16,17 +16,17 @@ const FEATURES = [
     {
         icon: MonitorSmartphone,
         title: "Frontend",
-        desc: ["React", "JavaScript", "Tailwind CSS"]
+        desc: ["React", "JavaScript", "Tailwind CSS", "Wordpress"]
     },
     {
         icon: Server,
         title: "Backend & infra",
-        desc: ["Node/Express", "Docker", "IIS/SQL Server", "VPS deployment"]
+        desc: ["Node/Express", "Docker", "IIS/SQL Server", "VPS deployment", "Nginx"]
     },
     {
         icon: CircuitBoard,
         title: "Also building with",
-        desc: ["C++", "WordPress"]
+        desc: ["C++", "Web3/Blockchain"]
     },
 ];
 
