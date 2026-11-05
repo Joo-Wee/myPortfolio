@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
+import heroImg from "../../assets/circuitImg.png";
 
 const HERO = {
     eyebrow: "Hi, I'm",
@@ -16,10 +17,10 @@ const HERO = {
 export default function HeroSection () {
     return (
         <section
-            className="py-3 section bg-glow bg-dots overflow-hidden relative"
+            className="py-3 section bg-glow bg-cover overflow-hidden relative" 
+            style={{ backgroundImage: `url(${heroImg})`, backgroundPosition: "20% 49%" }}
             id="home"
         >
-        
         <div
             aria-hidden
             className="pointer-events-none absolute -top-26 -right-32 w-[600px] rounded-full opacity-20 blur-3xl"

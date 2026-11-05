@@ -10,7 +10,7 @@ import { cn } from "../../lib/utils.ts";
    ────────────────────────────────────────────────────────────── */
 const NAV_LINKS = [
   { label: "Home",     href: "/" },
-  { label: "About",    href: "/about" },
+  { label: "About",    href: "/#about" },
   { label: "Projects", href: "/projects" },
   { label: "Contact",  href: "/contact" },
 ];
@@ -22,7 +22,7 @@ const NAV_CTA = { label: "Get in Touch", href: "/contact" };
 const SITE_NAME = "Joo Manasseh";
 
 export default function Navbar() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
 
@@ -35,8 +35,21 @@ export default function Navbar() {
   // Close mobile menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
-  const isActive = (href) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href) => {
+    // Split the href into path and hash parts
+    const [path, hashPart] = href.split("#");
+
+    // If the link has a hash (e.g., "/#about")
+    if (hashPart) {
+      return pathname === path && hash === `#${hashPart}`;
+    }
+
+    // For plain paths (e.g., "/" or "/contact")
+    if (path === "/") {
+      return pathname === "/" && !hash;
+    }
+    return pathname.startsWith(path);
+  };
 
   return (
     <>
